@@ -18,19 +18,18 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # Main dependencies
-  s.add_dependency 'activesupport', '~>3.0'
+  s.add_dependency 'activesupport', '~> 4.0.0.rc1'
   s.add_dependency 'addressable', '~>2.2'
   s.add_dependency 'httpauth', '~> 0.1'
 
   s.add_development_dependency 'rack-test', '~>0.5.7'
-  s.add_development_dependency 'activerecord', '~>3.0'
+  s.add_development_dependency 'activerecord', '~> 4.0.0.rc1'
   s.add_development_dependency 'rspec', '~>2.9.0'
   s.add_development_dependency 'mocha', '~>0.9.12'
   s.add_development_dependency 'rake', '~>0.9.2'
   s.add_development_dependency 'sqlite3', '~>1.3.5'
   s.add_development_dependency 'timecop', '~>0.3.4'
   s.add_development_dependency 'yajl-ruby', '~>0.7.5'
-  s.add_development_dependency 'mongoid', '2.0.0.rc.6'
   s.add_development_dependency 'bson', '1.2.0'
   s.add_development_dependency 'bson_ext', '1.2.0'
 end
