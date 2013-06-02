@@ -1,4 +1,4 @@
-class AddOauth2Tables < ActiveRecord::Migration
+class CreateOauth2ProviderTables < ActiveRecord::Migration
   def self.up
     create_table 'oauth_clients', :force => true do |t|
       t.string   'name'
