@@ -26,7 +26,7 @@ helpers do
   def authorize_url
     RESOURCE_HOST + "/oauth/authorize?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&redirect_uri=#{redirect_uri}"
   end
-  
+
   def access_token_url
     RESOURCE_HOST + "/oauth/access_token"
   end
@@ -38,9 +38,9 @@ end
 
 get '/callback' do
   response = HTTParty.post(access_token_url, :body => {
-    :client_id => CLIENT_ID, 
-    :client_secret => CLIENT_SECRET, 
-    :redirect_uri => redirect_uri, 
+    :client_id => CLIENT_ID,
+    :client_secret => CLIENT_SECRET,
+    :redirect_uri => redirect_uri,
     :code => params["code"],
     :grant_type => 'authorization_code'}
   )
