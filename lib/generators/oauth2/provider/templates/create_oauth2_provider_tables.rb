@@ -1,13 +1,13 @@
 class CreateOauth2ProviderTables < ActiveRecord::Migration
-  def self.up
-    create_table 'oauth_clients', :force => true do |t|
+  def change
+    create_table 'oauth_clients' do |t|
       t.string   'name'
       t.string   'oauth_identifier', :null => false
       t.string   'oauth_secret', :null => false
       t.string   'oauth_redirect_uri'
     end
 
-    create_table 'oauth_authorization_codes', :force => true do |t|
+    create_table 'oauth_authorization_codes' do |t|
       t.integer  'authorization_id', :null => false
       t.string   'code',      :null => false
       t.datetime 'expires_at'
@@ -16,7 +16,7 @@ class CreateOauth2ProviderTables < ActiveRecord::Migration
       t.string   'redirect_uri'
     end
 
-    create_table 'oauth_authorizations', :force => true do |t|
+    create_table 'oauth_authorizations' do |t|
       t.integer  'client_id', :null => false
       t.integer  'resource_owner_id'
       t.string   'resource_owner_type'
@@ -24,7 +24,7 @@ class CreateOauth2ProviderTables < ActiveRecord::Migration
       t.datetime 'expires_at'
     end
 
-    create_table 'oauth_access_tokens', :force => true do |t|
+    create_table 'oauth_access_tokens' do |t|
       t.integer  'authorization_id', :null => false
       t.string   'access_token', :null => false
       t.string   'refresh_token'
@@ -32,12 +32,5 @@ class CreateOauth2ProviderTables < ActiveRecord::Migration
       t.datetime 'created_at'
       t.datetime 'updated_at'
     end
-  end
-
-  def self.down
-    drop_table 'oauth_access_tokens'
-    drop_table 'oauth_authorizations'
-    drop_table 'oauth_authorization_codes'
-    drop_table 'oauth_clients'
   end
 end
