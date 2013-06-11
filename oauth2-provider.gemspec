@@ -18,12 +18,12 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # Main dependencies
-  s.add_dependency 'activesupport', '~> 3.2.13'
+  s.add_dependency 'activesupport', '~> 3.2'
   s.add_dependency 'addressable', '~> 2.3.4'
   s.add_dependency 'httpauth', '~> 0.2.0'
 
   s.add_development_dependency 'rack-test', '~> 0.6.2'
-  s.add_development_dependency 'activerecord', '~> 3.2.13'
+  s.add_development_dependency 'activerecord', '~> 3.2'
   s.add_development_dependency 'mongoid', '~> 3.1.4'
   s.add_development_dependency 'rspec', '~> 2.13.0'
   s.add_development_dependency 'mocha', '~> 0.14.0'
